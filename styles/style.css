@@ -127,3 +127,13 @@
     width: 100%;
 }
 
+@media (width >= 1200px) {
+    .header__theme-menu-list {
+        display: flex;
+        margin: 0;
+    }
+
+    .header__theme-menu {
+        justify-content: center;
+    }
+}
