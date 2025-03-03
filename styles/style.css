@@ -1,5 +1,129 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+    /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+    margin: var(--main-margin);
+    background-color: var(--main-color);
 }
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 55px;
+}
+
+.header__theme-menu {
+    display: flex;
+    justify-content: flex-end;
+    color: var(--accent-color);
+}
+
+.header__theme-menu-list {
+    margin-block-start: 75px;
+}
+
+.header__theme-menu-button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    margin: var(--main-margin);
+}
+
+.header__theme-menu-button:disabled {
+    outline: 1px solid var(--accent-color);
+}
+
+.header:before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    border-top: 1px solid var(--accent-color);
+    border-right: 1px solid var(--accent-color);
+    position: absolute;
+    right: var(--main-margin);
+}
+
+.empty {
+    color: var(--accent-color);
+    position: absolute;
+    right: 38px;
+}
+
+.empty:after {
+    content: '';
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    background-color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px 1px var(--accent-color);
+    right: -19px;
+    top: 8px;
+}
+
+.page__section {
+    display: grid;
+    gap: 55px;
+}
+
+.page__section__content {
+    background-color: var(--accent-color);
+}
+
+.page__section__header {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    color: var(--main-header-color);
+    text-shadow: 5px 3px var(--accent-color);
+    line-height: 96px;
+}
+
+.page__section__content_text {
+    color: var(--text-color-background);
+    font-weight: 700;
+}
+
+.page__main_header {
+    color: var(--accent-color);
+}
+
+.page__main_title {
+    background-color: var(--accent-color);
+    color: var(--text-color-background);
+    font-weight: 700;
+}
+
+.page__main_content {
+    color: var(--text-color);
+}
+
+.page__main .page__main_header {
+    margin-block-start: 50px;
+    margin-block-end: 20px;
+}
+
+.page__main .page__main_title {
+    margin-block-end: 10px;
+}
+
+.page__main .page__main_content {
+    margin-block-end: 20px;
+}
+
+.page__main h4 {
+    font-weight: 400;
+}
+
+.page__main_content_gallery {
+    display: grid;
+    gap: 10px;
+}
+
+.page__main_content-image-container {
+    width: 355px;
+}
+
+.page__main_content-image {
+    width: 100%;
+}
+
