@@ -1,15 +1,20 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-    /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
     margin: var(--main-margin);
     background-color: var(--main-color);
+    background-image: var(--backgroud-url);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 .header {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(355px, 1fr);
+    grid-template-rows: repeat(4, auto);
     gap: 55px;
+    position: relative;
 }
 
 .header__theme-menu {
@@ -33,15 +38,27 @@
     outline: 1px solid var(--accent-color);
 }
 
-.header:before {
+.decorated-zone:before {
     content: '';
     width: 25px;
     height: 25px;
     border-top: 1px solid var(--accent-color);
     border-right: 1px solid var(--accent-color);
     position: absolute;
-    right: var(--main-margin);
+    right: 0;
 }
+
+.decorated-zone:after {
+    content: '';
+    width: 25px;
+    height: 25px;
+    border-bottom: 1px solid var(--accent-color);
+    border-left: 1px solid var(--accent-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 
 .empty {
     color: var(--accent-color);
@@ -67,15 +84,24 @@
     gap: 55px;
 }
 
-.page__section__content {
+.title_decor {
     background-color: var(--accent-color);
+    color: var(--text-color-background);
+    font-weight: 700;
 }
+
 
 .page__section__header {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     color: var(--main-header-color);
     text-shadow: 5px 3px var(--accent-color);
     line-height: 96px;
+}
+
+@media (width >= 600px) {
+    .page__section__header {
+        font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    }
 }
 
 .page__section__content_text {
@@ -85,12 +111,6 @@
 
 .page__main_header {
     color: var(--accent-color);
-}
-
-.page__main_title {
-    background-color: var(--accent-color);
-    color: var(--text-color-background);
-    font-weight: 700;
 }
 
 .page__main_content {
@@ -114,20 +134,48 @@
     font-weight: 400;
 }
 
+.page__main_blocks .page__main_content:last-child {
+    margin-block-end: 50px;
+}
+
 .page__main_content_gallery {
     display: grid;
+    grid-template-columns: minmax(355px, 1fr);
     gap: 10px;
 }
 
-.page__main_content-image-container {
-    width: 355px;
-}
-
 .page__main_content-image {
+    display: block;
     width: 100%;
 }
 
-@media (width >= 1200px) {
+.page__main_content_gallery .page__main_content-image-container:last-child {
+    margin-block-end: 40px;
+}
+
+.page___footer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    height: max(668px);
+}
+
+.page___footer_header {
+    align-self: center;
+    color: var(--main-header-color);
+    text-shadow: 5px 3px var(--accent-color);
+    line-height: 96px;
+}
+
+
+@media (width >= 768px) {
+
+
+}
+
+
+@media (width >= 1024px) {
     .header__theme-menu-list {
         display: flex;
         margin: 0;
@@ -137,3 +185,4 @@
         justify-content: center;
     }
 }
+
