@@ -186,8 +186,7 @@
 
 @media (width >= 768px) {
     .page {
-        --main-margin: 20px;
-        margin: var(--main-margin);
+        margin: 20px;
     }
 
     .header {
@@ -307,6 +306,11 @@
 
 
 @media (width >= 1024px) {
+
+    .page {
+        margin: 20px;
+    }
+
     .header__theme-menu-list {
         display: flex;
         flex-direction: row;
