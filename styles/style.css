@@ -92,6 +92,7 @@ header.decorated-zone::after {
 }
 
 .title_decor {
+    display: block;
     background-color: var(--accent-color);
     color: var(--text-color-background);
     font-weight: 700;
